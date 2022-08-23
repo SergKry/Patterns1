@@ -19,12 +19,22 @@ public class DataGenerator {
     }
 
     public static String generateCity(String locale) {
-        Faker faker = new Faker(new Locale("ru"));
-        String city = faker.address().city();
+        final Random randomCity = new Random();
+        String[] city = new String[]{"Архангельск", "Астрахань", "Белгород","Благовещенск", "Великий Новгород",
+                "Владивосток", "Владимир", "Волгоград", "Воронеж", "Горно-Алтайск", "Екатеринбург", "Иваново",
+                "Ижевск", "Иркутск", "Йошкар-Ола", "Казань", "Калининград", "Калуга", "Кемерово", "Киров",
+                "Кострома", "Красноярск", "Курган", "Курск", "Кызыл", "Петропавловск-Камчатский", "Псков",
+                "Самара", "Санкт-Петербург", "Саранск", "Томск", "Элиста", "Южно-Сахалинск", "Якутск", "Ярославль"};
+        return city[randomCity.nextInt(35)];
+    }
+
+
+        //Faker faker = new Faker(new Locale("ru"));
+        //String city = faker.address().city();
         // TODO: добавить логику для объявления переменной city и задания её значения, генерацию можно выполнить
         // с помощью Faker, либо используя массив валидных городов и класс Random
-        return city;
-    }
+        //return city;
+    //}
 
     public static String generateName(String locale) {
         Faker faker = new Faker(new Locale("ru"));
